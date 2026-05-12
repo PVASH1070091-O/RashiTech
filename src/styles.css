@@ -808,12 +808,23 @@ button {
   font-size: 1.45rem;
   letter-spacing: -0.04em;
 }
-
 .marquee-track {
   display: flex;
   gap: 16px;
   min-width: max-content;
   animation: marquee 20s linear infinite;
+}
+.marquee-track-left {
+  display: flex;
+  gap: 16px;
+  min-width: max-content;
+  animation: marquee 20s linear infinite;
+}
+.marquee-track-right {
+  display: flex;
+  gap: 16px;
+  min-width: max-content;
+  animation: marquee 20s linear infinite reverse;
 }
 
 .client-chip {
@@ -1438,7 +1449,7 @@ button {
   }
 
   .marquee-band {
-    gap: 14px;
+    gap: 0px
   }
 
   .product-gallery {

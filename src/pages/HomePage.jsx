@@ -59,6 +59,39 @@ const audienceTracks = [
   },
 ];
 
+const eduProducts = [
+  {
+    name: 'speaker 1',
+    mark: 'U',
+    className: 'client-logo-unitech',
+    subtitle: '',
+  },
+  {
+    name: 'speaker2',
+    mark: 'P',
+    className: 'client-logo-philips',
+    subtitle: '',
+  },
+  {
+    name: 'speaker3',
+    mark: 'a',
+    className: 'client-logo-adani',
+    subtitle: '',
+  },
+  {
+    name: 'speaker4',
+    mark: 'IT',
+    className: 'client-logo-india-today',
+    subtitle: '',
+  },
+  {
+    name: 'speaker5',
+    mark: '△',
+    className: 'client-logo-dlf',
+    subtitle: 'BUILDING INDIA',
+  },
+]
+
 const clients = [
   {
     name: 'unitech',
@@ -385,6 +418,49 @@ export default function HomePage() {
             </div>
           </div>
         </div>
+      </section>
+
+      <section className="marquee-band" aria-label="Our clients">
+        {/* <div className="marquee-heading">
+          <p className="eyebrow">Trusted by</p>
+          <h3></h3>
+        </div> */}
+
+        <div className="marquee-track-left">
+          {[...eduProducts, ...eduProducts].map((client, index) => (
+            <div className={`client-chip ${client.className}`} key={`${client.name}-${index}`}>
+              <span className="client-symbol" aria-hidden="true">
+                {client.mark}
+              </span>
+              <div className="client-wordmark-right">
+                <span className="client-name">{client.name}</span>
+                {client.subtitle ? <span className="client-subtitle">{client.subtitle}</span> : null}
+              </div>
+            </div>
+          ))}
+        </div>
+        
+      </section>
+      <section className="marquee-band" aria-label="Our clients">
+        {/* <div className="marquee-heading">
+          <p className="eyebrow">Trusted by</p>
+          <h3></h3>
+        </div> */}
+
+        <div className="marquee-track-right">
+          {[...eduProducts, ...eduProducts].map((client, index) => (
+            <div className={`client-chip ${client.className}`} key={`${client.name}-${index}`}>
+              <span className="client-symbol" aria-hidden="true">
+                {client.mark}
+              </span>
+              <div className="client-wordmark-right">
+                <span className="client-name">{client.name}</span>
+                {client.subtitle ? <span className="client-subtitle">{client.subtitle}</span> : null}
+              </div>
+            </div>
+          ))}
+        </div>
+        
       </section>
 
       <section className="collab-section" id="categories">
