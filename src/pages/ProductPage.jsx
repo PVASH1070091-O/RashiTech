@@ -10,7 +10,7 @@ export default function ProductPage() {
       <header className="topbar">
         <div className="topbar-inner">
           <Link className="brand" to="/">
-            Veloura
+            Rashi Tech
           </Link>
           <Link className="back-link" to="/">
             Back to home
