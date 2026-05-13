@@ -531,7 +531,7 @@ button {
 }
 
 .collab-section {
-  padding: 88px 0 28px;
+  padding: 88px 30px 28px 30px;
 
   background-color: #000000;
 }
@@ -1579,6 +1579,17 @@ button {
 
 .global-whatsapp:hover {
   transform: scale(1.08);
+}
+@media (max-width: 768px) {
+  .global-whatsapp {
+    right: 18px;
+    bottom: 24px;
+
+    width: 58px;
+    height: 58px;
+
+    font-size: 28px;
+  }
 }
 
 @keyframes whatsappPulse {
