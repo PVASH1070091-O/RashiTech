@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { products } from '../data/products';
+import Testimonials from './ReviewSection';
 
 const metrics = [
   { target: 12, format: 'k+', label: 'Rooms transformed' },
@@ -29,8 +30,8 @@ const storyCards = [
 const audienceTracks = [
   {
     id: 'educational',
-    tag: 'Educational',
-    title: 'Educational',
+    tag: 'Presentation & EdTech Solution',
+    title: 'Presentation & EdTech Solution',
     text: 'Show digital boards, teaching displays, smart study tools, and speaker-led setups in a clean visual flow that feels modern and easy to explore.',
     note: 'Built for classrooms, learning spaces, and creator-led study environments.',
     galleryLabel: 'Educational environments',
@@ -44,8 +45,53 @@ const audienceTracks = [
   },
   {
     id: 'entertainment',
-    tag: 'Entertainment',
+    tag: 'Audio & Home Entertainment',
+    title: 'Audio & Home Entertainment',
+    text: 'Highlight speakers, screens, gaming accessories, and electrical appliances with richer motion and bolder imagery so the category feels energetic and immersive.',
+    note: 'Built for speakers, cinematic living rooms, and premium home-tech showcases.',
+    galleryLabel: 'Entertainment environments',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1400&q=80',
+      'https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=1400&q=80',
+      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80',
+    ],
+  },
+  {
+    id: 'displaySol',
+    tag: 'Display & Visual Solution',
+    title: 'Display & Visual Solution',
+    text: 'Highlight speakers, screens, gaming accessories, and electrical appliances with richer motion and bolder imagery so the category feels energetic and immersive.',
+    note: 'Built for speakers, cinematic living rooms, and premium home-tech showcases.',
+    galleryLabel: 'Entertainment environments',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1400&q=80',
+      'https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=1400&q=80',
+      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80',
+    ],
+  },
+  {
+    id: 'camera',
+    tag: 'Camera & Conferencing',
     title: 'Entertainment',
+    text: 'Highlight speakers, screens, gaming accessories, and electrical appliances with richer motion and bolder imagery so the category feels energetic and immersive.',
+    note: 'Built for speakers, cinematic living rooms, and premium home-tech showcases.',
+    galleryLabel: 'Entertainment environments',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1400&q=80',
+      'https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=1400&q=80',
+      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80',
+    ],
+  },
+  {
+    id: 'accessories',
+    tag: 'Accessories & Support Products',
+    title: 'Accessories & Support Products',
     text: 'Highlight speakers, screens, gaming accessories, and electrical appliances with richer motion and bolder imagery so the category feels energetic and immersive.',
     note: 'Built for speakers, cinematic living rooms, and premium home-tech showcases.',
     galleryLabel: 'Entertainment environments',
@@ -60,36 +106,22 @@ const audienceTracks = [
 ];
 
 const eduProducts = [
-  {
-    name: 'speaker 1',
-    mark: 'U',
-    className: 'client-logo-unitech',
-    subtitle: '',
+   {
+    image: '/images/pr1.jpeg',
   },
   {
-    name: 'speaker2',
-    mark: 'P',
-    className: 'client-logo-philips',
-    subtitle: '',
+    image: '/images/pr2.jpeg',
   },
   {
-    name: 'speaker3',
-    mark: 'a',
-    className: 'client-logo-adani',
-    subtitle: '',
+    image: '/images/pr3.jpeg',
   },
   {
-    name: 'speaker4',
-    mark: 'IT',
-    className: 'client-logo-india-today',
-    subtitle: '',
+    image: '/images/pr4.jpeg',
   },
   {
-    name: 'speaker5',
-    mark: '△',
-    className: 'client-logo-dlf',
-    subtitle: 'BUILDING INDIA',
+    image: '/images/pr5.jpeg',
   },
+
 ]
 
 const clients = [
@@ -252,32 +284,43 @@ export default function HomePage() {
     let ticking = false;
 
     const updateActiveTrack = () => {
-      ticking = false;
+  ticking = false;
 
-      if (!scrollRail || trackSteps.length === 0) {
-        return;
-      }
+  if (!scrollRail || trackSteps.length === 0) {
+    return;
+  }
 
-      const railRect = scrollRail.getBoundingClientRect();
-      const progressStart = window.innerHeight * 0.16;
-      const progressRange = Math.max(scrollRail.offsetHeight - window.innerHeight * 0.84, 1);
-      const nextGalleryProgress = Math.min(
-        Math.max((progressStart - railRect.top) / progressRange, 0),
-        1,
-      );
+  const railRect = scrollRail.getBoundingClientRect();
 
-      const firstTrackImageCount = audienceTracks[0].galleryImages.length;
-      const totalImageCount = audienceTracks.reduce((sum, track) => sum + track.galleryImages.length, 0);
-      const imagePosition = nextGalleryProgress * Math.max(totalImageCount - 1, 1);
-      const nextActiveTrack =
-        imagePosition < firstTrackImageCount ? audienceTracks[0].id : audienceTracks[1].id;
+  // smoother + earlier start
+  const startOffset = window.innerHeight * 0.35;
 
-      setActiveTrack((current) => (current === nextActiveTrack ? current : nextActiveTrack));
-      setGalleryProgress((current) =>
-        Math.abs(current - nextGalleryProgress) > 0.01 ? nextGalleryProgress : current,
-          
-    );
-    };
+  // total scrollable area
+  const totalScrollable =
+    scrollRail.offsetHeight - window.innerHeight * 0.4;
+
+  // normalized progress
+  const progress = Math.min(
+    Math.max((startOffset - railRect.top) / totalScrollable, 0),
+    1
+  );
+
+  setGalleryProgress(progress);
+
+  // determine active section properly
+  const sectionProgress = progress * audienceTracks.length;
+
+  const activeIndex = Math.min(
+    Math.floor(sectionProgress),
+    audienceTracks.length - 1
+  );
+
+  const nextActiveTrack = audienceTracks[activeIndex]?.id;
+
+  setActiveTrack((current) =>
+    current === nextActiveTrack ? current : nextActiveTrack
+  );
+};
 
     const handleScroll = () => {
       if (!ticking) {
@@ -331,9 +374,8 @@ export default function HomePage() {
     combinedGallery[Math.min(currentGalleryIndex + 1, combinedGallery.length - 1)];
 
   return (
-    <main className="page-shell">
-      <div className="pointer-glow" />
-      <header className="topbar">
+    <>
+    <header className="topbar">
         <div className="topbar-inner">
           <Link className="brand" to="/">
             Rashi Tech
@@ -348,15 +390,16 @@ export default function HomePage() {
       </header>
 
       <section className="hero">
+        
         <div className="hero-glow hero-glow-left" />
         <div className="hero-glow hero-glow-right" />
         <div className="hero-copy">
           <p className="eyebrow">Entertainment + Education Spaces</p>
           <h1>
-            Premium recliners,
+            <span style={{color:'white'}}>Premium recliners,</span>
             <span> digital boards, and home theater spaces.</span>
           </h1>
-          <p className="hero-text">
+          <p className="hero-text" style={{color:"white"}}>
             Discover entertainment and learning setups designed for comfort, clarity, and immersion
             from luxury recliners and mini theater seating to digital boards, home theaters, and
             smart visual solutions.
@@ -376,14 +419,18 @@ export default function HomePage() {
             <div className="device-card-footer">
               <div>
                 <p>Featured setup</p>
-                <strong>Mini theater seating, projection mood, and immersive viewing.</strong>
+                <strong style={{color:"white"}}>Mini theater seating, projection mood, and immersive viewing.</strong>
               </div>
               <span>01</span>
             </div>
           </div>
         </div>
+        
       </section>
 
+    <main className="page-shell">
+      <div className="pointer-glow" />
+      
       <section className="intro-section reveal-card" id="about-us">
         <div className="intro-panel">
           <div className="intro-copy">
@@ -420,7 +467,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="marquee-band" aria-label="Our clients">
+      <section className="marquee-band" aria-label="Education">
         {/* <div className="marquee-heading">
           <p className="eyebrow">Trusted by</p>
           <h3></h3>
@@ -428,20 +475,18 @@ export default function HomePage() {
 
         <div className="marquee-track-left">
           {[...eduProducts, ...eduProducts].map((client, index) => (
-            <div className={`client-chip ${client.className}`} key={`${client.name}-${index}`}>
-              <span className="client-symbol" aria-hidden="true">
-                {client.mark}
-              </span>
-              <div className="client-wordmark-right">
-                <span className="client-name">{client.name}</span>
-                {client.subtitle ? <span className="client-subtitle">{client.subtitle}</span> : null}
-              </div>
-            </div>
+            <div className="client-chip" key={index}>
+      <img
+        src={client.image}
+        alt={`speaker-${index}`}
+        className="client-logo-image"
+      />
+    </div>
           ))}
         </div>
         
       </section>
-      <section className="marquee-band" aria-label="Our clients">
+      <section className="marquee-band" aria-label="Entertainment">
         {/* <div className="marquee-heading">
           <p className="eyebrow">Trusted by</p>
           <h3></h3>
@@ -449,15 +494,13 @@ export default function HomePage() {
 
         <div className="marquee-track-right">
           {[...eduProducts, ...eduProducts].map((client, index) => (
-            <div className={`client-chip ${client.className}`} key={`${client.name}-${index}`}>
-              <span className="client-symbol" aria-hidden="true">
-                {client.mark}
-              </span>
-              <div className="client-wordmark-right">
-                <span className="client-name">{client.name}</span>
-                {client.subtitle ? <span className="client-subtitle">{client.subtitle}</span> : null}
-              </div>
-            </div>
+            <div className="client-chip" key={index}>
+      <img
+        src={client.image}
+        alt={`speaker-${index}`}
+        className="client-logo-image"
+      />
+    </div>
           ))}
         </div>
         
@@ -488,39 +531,26 @@ export default function HomePage() {
 
           <div className="collab-gallery-flow">
             <div className={`collab-visuals collab-visuals-${currentTrack.id}`}>
-              <div className="service-preview-stack">
-                {currentGalleryIndex > 0 ? (
-                  <div
-                    className="service-preview-card service-preview-card-prev"
-                    style={{ transform: `translateY(${(-20 - galleryStepProgress * 26).toFixed(2)}%)` }}
-                  >
-                    <img src={previousGalleryItem.image} alt={`${previousGalleryItem.title} preview`} />
-                  </div>
-                ) : null}
+              <div
+  className="service-image-column"
+  style={{
+    transform: `translateY(-${galleryProgress * 70}%)`,
+  }}
+>
+  {combinedGallery.map((item, index) => (
+    <div className="service-image-item" key={item.key}>
+      <img
+        src={item.image}
+        alt={`${item.title}-${index}`}
+      />
 
-                <div
-                  className="service-preview-card service-preview-card-current"
-                  style={{ transform: `translateY(${(-galleryStepProgress * 20).toFixed(2)}%)` }}
-                >
-                  <img
-                    src={currentGalleryItem.image}
-                    alt={`${currentGalleryItem.title} showcase ${currentGalleryIndex + 1}`}
-                  />
-                  <div className="visual-label">
-                    <span>{currentGalleryItem.title}</span>
-                    <strong>{currentGalleryItem.galleryLabel}</strong>
-                  </div>
-                </div>
-
-                {currentGalleryIndex < combinedGallery.length - 1 ? (
-                  <div
-                    className="service-preview-card service-preview-card-next"
-                    style={{ transform: `translateY(${(72 - galleryStepProgress * 72).toFixed(2)}%)` }}
-                  >
-                    <img src={nextGalleryItem.image} alt={`${nextGalleryItem.title} preview`} />
-                  </div>
-                ) : null}
-              </div>
+      <div className="visual-label">
+        <span>{item.title}</span>
+        <strong>{item.galleryLabel}</strong>
+      </div>
+    </div>
+  ))}
+</div>
             </div>
 
             <div className="collab-scroll-rail" aria-hidden="true">
@@ -543,7 +573,7 @@ export default function HomePage() {
         ))}
       </section>
 
-      <section className="story-section" id="story">
+      {/* <section className="story-section" id="story">
         <div className="section-heading">
           <p className="eyebrow">Why it feels premium</p>
           <h2>Built with rhythm, depth, and scroll-driven storytelling.</h2>
@@ -562,9 +592,9 @@ export default function HomePage() {
             </article>
           ))}
         </div>
-      </section>
+      </section> */}
 
-      <section className="products-section" id="products">
+      {/* <section className="products-section" id="products">
         <div className="section-heading">
           <p className="eyebrow">Collection</p>
           <h2>Two-click shopping flow with a premium editorial homepage.</h2>
@@ -591,12 +621,25 @@ export default function HomePage() {
             </Link>
           ))}
         </div>
-      </section>
+      </section> */}
 
       <section className="marquee-band" aria-label="Our clients">
         <div className="marquee-heading">
           <p className="eyebrow">Trusted by</p>
-          <h3>Our clients</h3>
+          {/* <h3>Our clients</h3> */}
+          <h2>
+     
+      <span className="italic-gold">Our Clients</span>
+    </h2>
+    <div className="ornament">
+      <div className="ornament-line" />
+      <div className="ornament-center">
+        <svg viewBox="0 0 24 24"><path d="M12 2 C10 6 6 7 2 7 C6 9 9 12 8 17 C10 14 12 13 12 13 C12 13 14 14 16 17 C15 12 18 9 22 7 C18 7 14 6 12 2Z"/></svg>
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2 C10 6 6 7 2 7 C6 9 9 12 8 17 C10 14 12 13 12 13 C12 13 14 14 16 17 C15 12 18 9 22 7 C18 7 14 6 12 2Z"/></svg>
+      </div>
+      <div className="ornament-line right" />
+    </div>
         </div>
 
         <div className="marquee-track">
@@ -614,64 +657,100 @@ export default function HomePage() {
         </div>
       </section>
 
+      <Testimonials />
+
       <section className="location-section" id="about">
         <div className="location-card">
           <div className="location-copy">
-            <p className="eyebrow">Visit Us</p>
+            <p className="eyebrow" style={{color:"black"}}>Visit Us</p>
             <h2>Experience our solutions in person at our sample showroom location.</h2>
             <p>
-              Rashi Tech Experience Center, 2nd Floor, Skyline Plaza, Sector 18, Noida,
-              Uttar Pradesh 201301
+              10, Namrata Awas Colony, Bajrang Nagar, Kota, Rajasthan 324001
             </p>
           </div>
 
-          <div className="location-map" aria-label="Sample showroom map">
-            <div className="map-pin">Rashi Tech</div>
-            <div className="map-road map-road-horizontal" />
-            <div className="map-road map-road-vertical" />
-            <div className="map-block map-block-one" />
-            <div className="map-block map-block-two" />
-            <div className="map-block map-block-three" />
+          <div className="location-map">
+            <iframe
+              title="Rashi Tech Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.7799769435605!2d75.86484227543484!3d25.17690607772394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396f9b3990019d3b%3A0x18adc00a12d59590!2sSOUND%20N%20STYLE%20BY%20RASHI%20TECHNOLOGIES!5e0!3m2!1sen!2sin!4v1778689862292!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
       </section>
-
-      <footer className="site-footer">
-        <div className="footer-top">
-          <div className="footer-brand-block">
-            <p className="eyebrow">Rashi Tech</p>
-            <h3>Immersive spaces for entertainment, education, and smart visual experiences.</h3>
-          </div>
-
-          <div className="footer-contact">
-            <div>
-              <span>Email</span>
-              <a href="mailto:hello@rashitech.in">hello@rashitech.in</a>
-            </div>
-            <div>
-              <span>Contact</span>
-              <a href="tel:+919999999999">+91 99999 99999</a>
-            </div>
-            <div>
-              <span>Address</span>
-              <p>Skyline Plaza, Sector 18, Noida, Uttar Pradesh 201301</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="footer-bottom">
-          <div className="social-links">
-            {socialLinks.map((item) => (
-              <a href="/" className="social-link" key={item.name} aria-label={item.name}>
-                <span>{item.icon}</span>
-                <small>{item.handle}</small>
-              </a>
-            ))}
-          </div>
-
-          <p className="footer-note">© 2026 Rashi Tech. All rights reserved.</p>
-        </div>
-      </footer>
+      
     </main>
+    <footer className="modern-footer">
+  <div className="footer-overlay" />
+
+  <div className="footer-container">
+    {/* LEFT */}
+    <div className="footer-brand">
+      <h2>Rashi Tech</h2>
+
+      <p>
+        Immersive entertainment, education, and smart visual
+        experiences crafted for modern spaces.
+      </p>
+    </div>
+
+    {/* LINKS */}
+    <div className="footer-column">
+      <h3>Useful Links</h3>
+
+      <a href="/">Home</a>
+      <a href="#services">Services</a>
+      <a href="#products">Products</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    {/* POLICIES */}
+    <div className="footer-column">
+      <h3>Policies</h3>
+
+      <a href="/">Privacy Policy</a>
+      <a href="/">Terms & Conditions</a>
+      <a href="/">Shipping Policy</a>
+    </div>
+
+    {/* SOCIAL */}
+    <div className="footer-column">
+      <h3>Social Links</h3>
+
+      <p className="footer-social-text">
+        Don’t miss our future updates! Follow us today.
+      </p>
+
+      <div className="footer-socials">
+        <a href="/">f</a>
+        <a href="/">◎</a>
+        <a href="/">▶</a>
+      </div>
+    </div>
+  
+  </div>
+
+  {/* BOTTOM */}
+  <div className="footer-bottom-bar">
+    <p style={{color:'white'}}>© 2026 Rashi Tech. All rights reserved.</p>
+
+   
+  </div>
+</footer>
+<a
+  href="https://wa.me/919116603799?text=Hi%20Rashi%20Tech,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
+  className="global-whatsapp"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  ✆
+</a>
+      </>
   );
 }
