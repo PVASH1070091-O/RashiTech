@@ -531,7 +531,7 @@ button {
 }
 
 .collab-section {
-  padding: 88px 30px 28px 30px;
+  padding: 88px 5% 28px;
 
   background-color: #000000;
 }
@@ -1098,7 +1098,7 @@ button {
 }
 .reviews-heading-wrapper {
   text-align: center;
-  padding: 2.5rem 1rem 1.5rem;
+
   font-family: 'Nunito', sans-serif;
 }
 

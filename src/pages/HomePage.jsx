@@ -629,7 +629,13 @@ export default function HomePage() {
           {/* <h3>Our clients</h3> */}
           <h2>
      
+      <div className="reviews-heading-wrapper">
+    <h2>
+     
       <span className="italic-gold">Our Clients</span>
+    </h2>
+  
+  </div>
     </h2>
     <div className="ornament">
       <div className="ornament-line" />
