@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { products } from '../data/products';
 import Testimonials from './ReviewSection';
+import { FaWhatsapp,FaFacebook,FaInstagram,FaYoutube } from "react-icons/fa";
 
 const metrics = [
   { target: 12, format: 'k+', label: 'Rooms transformed' },
@@ -749,9 +750,9 @@ export default function HomePage() {
       </p>
 
       <div className="footer-socials">
-        <a href="/">f</a>
-        <a href="/">◎</a>
-        <a href="/">▶</a>
+        <a href="/"><FaFacebook /></a>
+        <a href="/"><FaInstagram /></a>
+        <a href="/"><FaYoutube /></a>
       </div>
     </div>
   
@@ -770,7 +771,7 @@ export default function HomePage() {
   target="_blank"
   rel="noopener noreferrer"
 >
-  ✆
+  <FaWhatsapp />
 </a>
       </>
   );
