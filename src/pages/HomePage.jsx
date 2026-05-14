@@ -515,7 +515,13 @@ export default function HomePage() {
         <div className="collab-layout">
           <div className="collab-list collab-list-sticky">
             {audienceTracks.map((track) => (
-              <article key={track.id} className={`track-item ${activeTrack === track.id ? 'track-step-active' : ''}`}>
+              <article
+  key={track.id}
+  className={`track-item ${activeTrack === track.id ? 'track-step-active' : ''}`}
+  style={{
+    backgroundImage: `url(${track.mobileImage || track.image})`
+  }}
+>
                 <div className="track-copy">
                   <h3>{track.title}</h3>
                   <div className="track-body">

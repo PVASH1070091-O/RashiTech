@@ -1945,3 +1945,80 @@ button {
     scroll-behavior: auto !important;
   }
 }
+
+@media (max-width: 720px) {
+
+  .collab-gallery-flow {
+    display: none;
+  }
+
+  .collab-layout {
+    display: block;
+  }
+
+  .collab-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .track-item {
+    position: relative;
+
+    padding: 28px 22px;
+
+    min-height: 260px;
+
+    border-radius: 24px;
+    overflow: hidden;
+
+    display: flex;
+    align-items: flex-end;
+
+    border: 0;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .track-item::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(0,0,0,0.15) 0%,
+        rgba(0,0,0,0.82) 100%
+      );
+
+    z-index: 1;
+  }
+
+  .track-copy {
+    position: relative;
+    z-index: 2;
+
+    max-width: 100%;
+  }
+
+  .track-copy h3 {
+    color: white;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+
+  .track-body {
+    grid-template-rows: 1fr;
+    opacity: 1;
+    margin-top: 0;
+  }
+
+  .track-body p,
+  .track-body small {
+    color: rgba(255,255,255,0.9);
+  }
+}
