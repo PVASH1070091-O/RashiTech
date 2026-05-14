@@ -26,7 +26,7 @@ const storyCards = [
     text: 'Native scroll behavior, CSS animations, and simple React state keep the experience smooth while staying easy to maintain.',
   },
 ];
-
+console.log("inddeeerrerere",window.innerWidth)
 const audienceTracks = [
   {
     id: 'educational',
@@ -42,6 +42,7 @@ const audienceTracks = [
       'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1400&q=80',
       'https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1400&q=80',
     ],
+    mobileImage: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80',
   },
   {
     id: 'entertainment',
@@ -57,6 +58,7 @@ const audienceTracks = [
       'https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=1400&q=80',
       'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80',
     ],
+    mobileImage:'https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=900&q=80',
   },
   {
     id: 'displaySol',
@@ -72,6 +74,7 @@ const audienceTracks = [
       'https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=1400&q=80',
       'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80',
     ],
+    mobileImage:'https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=900&q=80',
   },
   {
     id: 'camera',
@@ -87,6 +90,7 @@ const audienceTracks = [
       'https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=1400&q=80',
       'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80',
     ],
+    mobileImage:'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80',
   },
   {
     id: 'accessories',
@@ -102,6 +106,7 @@ const audienceTracks = [
       'https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=1400&q=80',
       'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80',
     ],
+    mobileImage:'https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=1400&q=80',
   },
 ];
 
@@ -516,11 +521,15 @@ export default function HomePage() {
           <div className="collab-list collab-list-sticky">
             {audienceTracks.map((track) => (
               <article
-  key={track.id}
-  className={`track-item ${activeTrack === track.id ? 'track-step-active' : ''}`}
-  style={{
-    backgroundImage: `url(${track.mobileImage || track.image})`
-  }}
+              key={track.id}
+              className={`track-item ${activeTrack === track.id ? 'track-step-active' : ''}`}
+              style={
+                window.innerWidth <= 720
+                  ? {
+                      backgroundImage: `url(${track.mobileImage || track.image})`,
+                    }
+                  : {}
+              }
 >
                 <div className="track-copy">
                   <h3>{track.title}</h3>
@@ -538,11 +547,11 @@ export default function HomePage() {
           <div className="collab-gallery-flow">
             <div className={`collab-visuals collab-visuals-${currentTrack.id}`}>
               <div
-  className="service-image-column"
-  style={{
-    transform: `translateY(-${galleryProgress * 70}%)`,
-  }}
->
+                  className="service-image-column"
+                  style={{
+                    transform: `translateY(-${galleryProgress * 70}%)`,
+                  }}
+                >
   {combinedGallery.map((item, index) => (
     <div className="service-image-item" key={item.key}>
       <img
