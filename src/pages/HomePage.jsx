@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { products } from '../data/products';
 import Testimonials from './ReviewSection';
 import { FaWhatsapp,FaFacebook,FaInstagram,FaYoutube } from "react-icons/fa";
+import Navbar from './Navbar';
+
 
 const metrics = [
   { target: 12, format: 'k+', label: 'Rooms transformed' },
@@ -39,9 +41,9 @@ const audienceTracks = [
     galleryImages: [
       'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80',
       'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1400&q=80',
-      'https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1400&q=80',
+      // 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80',
+      // 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1400&q=80',
+      // 'https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1400&q=80',
     ],
     mobileImage: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80',
   },
@@ -55,9 +57,9 @@ const audienceTracks = [
     galleryImages: [
       'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1400&q=80',
       'https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=1400&q=80',
-      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80',
+      // 'https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=900&q=80',
+      // 'https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=1400&q=80',
+      // 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80',
     ],
     mobileImage:'https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=900&q=80',
   },
@@ -71,25 +73,25 @@ const audienceTracks = [
     galleryImages: [
       'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1400&q=80',
       'https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=1400&q=80',
-      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80',
+      // 'https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=900&q=80',
+      // 'https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=1400&q=80',
+      // 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80',
     ],
     mobileImage:'https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=900&q=80',
   },
   {
     id: 'camera',
     tag: 'Camera & Conferencing',
-    title: 'Entertainment',
+    title: 'Camera & Conferencing',
     text: 'Highlight speakers, screens, gaming accessories, and electrical appliances with richer motion and bolder imagery so the category feels energetic and immersive.',
     note: 'Built for speakers, cinematic living rooms, and premium home-tech showcases.',
     galleryLabel: 'Entertainment environments',
     galleryImages: [
       'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1400&q=80',
       'https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=1400&q=80',
-      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80',
+      // 'https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=900&q=80',
+      // 'https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=1400&q=80',
+      // 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80',
     ],
     mobileImage:'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80',
   },
@@ -103,9 +105,9 @@ const audienceTracks = [
     galleryImages: [
       'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1400&q=80',
       'https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=1400&q=80',
-      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80',
+      // 'https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=900&q=80',
+      // 'https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=1400&q=80',
+      // 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80',
     ],
     mobileImage:'https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=1400&q=80',
   },
@@ -113,19 +115,19 @@ const audienceTracks = [
 
 const eduProducts = [
    {
-    image: '/images/pr1.jpeg',
+    image: '/images/ptzcamera-removebg-preview.png',
   },
   {
-    image: '/images/pr2.jpeg',
+    image: '/images/tripodstandscreeen-removebg-preview.png',
   },
   {
-    image: '/images/pr3.jpeg',
+    image: '/images/projectorScreen-removebg-preview.png',
   },
   {
-    image: '/images/pr4.jpeg',
+    image: '/images/signage_image-removebg-preview.png',
   },
   {
-    image: '/images/pr5.jpeg',
+    image: '/images/projector-removebg-preview.png',
   },
 
 ]
@@ -381,20 +383,8 @@ export default function HomePage() {
 
   return (
     <>
-    <header className="topbar">
-        <div className="topbar-inner">
-          <Link className="brand" to="/">
-            Rashi Tech
-          </Link>
-          <nav className="topnav">
-            <a href="#categories">Categories</a>
-            <a href="#products">Shop</a>
-            <a href="#story">Story</a>
-            <a href="#about">About</a>
-          </nav>
-        </div>
-      </header>
-
+   
+      <Navbar />
       <section className="hero">
         
         <div className="hero-glow hero-glow-left" />
@@ -480,7 +470,7 @@ export default function HomePage() {
         </div> */}
 
         <div className="marquee-track-left">
-          {[...eduProducts, ...eduProducts].map((client, index) => (
+          {[...eduProducts,...eduProducts].map((client, index) => (
             <div className="client-chip" key={index}>
       <img
         src={client.image}
@@ -499,7 +489,7 @@ export default function HomePage() {
         </div> */}
 
         <div className="marquee-track-right">
-          {[...eduProducts, ...eduProducts].map((client, index) => (
+          {[...eduProducts,...eduProducts,].map((client, index) => (
             <div className="client-chip" key={index}>
       <img
         src={client.image}
@@ -533,14 +523,24 @@ export default function HomePage() {
               }
 >
                 <div className="track-copy">
-                  <h3>{track.title}</h3>
+                            <Link
+                    to={`/services/${track.id}`}
+                    style={{
+                      textDecoration: 'none',
+                      color: 'inherit',
+                      display: 'block',
+                    }}
+                  >
+                  <h3 style={{cursor:"pointer"}}>{track.title}</h3>
                   <div className="track-body">
                     <div className="track-body-inner">
                       <p>{track.text}</p>
                       <small>{track.note}</small>
                     </div>
                   </div>
+                  </Link>
                 </div>
+                
               </article>
             ))}
           </div>
@@ -565,8 +565,8 @@ export default function HomePage() {
         <strong>{item.galleryLabel}</strong>
       </div>
     </div>
-  ))}
-</div>
+    ))}
+  </div>
             </div>
 
             <div className="collab-scroll-rail" aria-hidden="true">
@@ -713,12 +713,11 @@ export default function HomePage() {
   <div className="footer-container">
     {/* LEFT */}
     <div className="footer-brand">
-      <h2>Rashi Tech</h2>
-
-      <p>
-        Immersive entertainment, education, and smart visual
-        experiences crafted for modern spaces.
-      </p>
+      <img src="/images/RashiTechLogo-removebg-preview.png" alt="Rashi Tech" style={{height:"100%"}}/>
+  
+      {/* <p>
+        Immersive entertainment, education, and smart visual experiences crafted for modern spaces.
+      </p> */}
     </div>
 
     {/* LINKS */}
