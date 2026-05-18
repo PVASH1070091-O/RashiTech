@@ -52,9 +52,10 @@ button {
 .page-shell,
 .product-page-shell {
 
-  margin: 0 auto;
+  margin: 0;
   padding-bottom: 48px;
   position: relative;
+  width: 100%;
 }
 
 .pointer-glow {
@@ -217,10 +218,13 @@ button {
 
 .device-card {
   width: min(100%, 530px);
-  max-height: 620px;
+
+  max-height: 90vh;
 
   padding: 14px;
   border-radius: 36px;
+
+  overflow: hidden;
 
   background: linear-gradient(
     180deg,
@@ -240,11 +244,16 @@ button {
 .device-card-image {
   border-radius: 28px;
   overflow: hidden;
-  aspect-ratio: 1/0.96;
-}
 
+  width: 100%;
+
+  height: clamp(260px, 52vh, 520px);
+}
 .device-card-image img {
+  width: 100%;
   height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .device-card-footer {
@@ -388,7 +397,7 @@ button {
 .intro-section {
   padding: 24px 0 36px;
   width: min(1200px, calc(100% - 32px));
-  margin:2% 10%;
+  margin:auto
 }
 
 .intro-panel {
@@ -1771,10 +1780,7 @@ button {
 }
 
 @media (max-width: 720px) {
-  .page-shell,
-  .product-page-shell {
-    width: min(100% - 24px, 1200px);
-  }
+
 
   .topbar {
     padding: 0 12px;

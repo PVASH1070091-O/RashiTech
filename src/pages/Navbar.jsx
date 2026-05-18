@@ -15,10 +15,10 @@ const Navbar = () => {
             />
           </Link>
           <nav className="topnav">
-            <a href="#categories">Categories</a>
-            <a href="#products">Shop</a>
-            <a href="#story">Story</a>
-            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            {/* <a href="#products">Shop</a>
+            <a href="#story">Story</a> */}
+            <a href="#about-us">About Us</a>
           </nav>
         </div>
       </header>

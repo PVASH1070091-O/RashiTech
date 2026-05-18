@@ -98,9 +98,9 @@ export default function ServiceCategoryPage() {
       
             <a href="/">Home</a>
             <a href="#services">Services</a>
-            <a href="#products">Products</a>
+            {/* <a href="#products">Products</a> */}
             <a href="#about">About Us</a>
-            <a href="#contact">Contact</a>
+            {/* <a href="#contact">Contact</a> */}
           </div>
       
           {/* POLICIES */}

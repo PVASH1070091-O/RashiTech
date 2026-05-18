@@ -502,7 +502,7 @@ export default function HomePage() {
         
       </section>
 
-      <section className="collab-section" id="categories">
+      <section className="collab-section" id="services">
         <div className="section-heading">
           <p className="eyebrow">Our Services</p>
           <h2>Solutions crafted for immersive entertainment and modern education spaces.</h2>
@@ -726,9 +726,9 @@ export default function HomePage() {
 
       <a href="/">Home</a>
       <a href="#services">Services</a>
-      <a href="#products">Products</a>
+      {/* <a href="#products">Products</a> */}
       <a href="#about">About Us</a>
-      <a href="#contact">Contact</a>
+      {/* <a href="#contact">Contact</a> */}
     </div>
 
     {/* POLICIES */}
