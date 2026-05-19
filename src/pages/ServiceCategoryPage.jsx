@@ -9,6 +9,18 @@ import { FaWhatsapp,FaFacebook,FaInstagram,FaYoutube } from "react-icons/fa";
 export default function ServiceCategoryPage() {
   const { categoryId } = useParams();
   const category = serviceCategories[categoryId];
+//   useLayoutEffect(() => {
+//   window.scrollTo(0, 0);
+// }, [categoryId]);
+useEffect(() => {
+  console.log('scroll position on mount:', window.scrollY);
+  setTimeout(() => {
+    console.log('scroll position after 100ms:', window.scrollY);
+  }, 100);
+  setTimeout(() => {
+    console.log('scroll position after 500ms:', window.scrollY);
+  }, 500);
+}, []);
 
   // Scroll to top before paint
   useEffect(() => {
@@ -44,9 +56,9 @@ export default function ServiceCategoryPage() {
       <Navbar />
 
       {/* Hero: CSS keyframe animation, no scroll-reveal */}
-      <section className="service-page-hero scroll-reveal scroll-reveal-up">
+      <section className="service-page-hero">
         <div className="service-page-copy">
-          <p className="eyebrow">{category.eyebrow}</p>
+          <p className="eyebrow" style={{color:'black'}}>{category.eyebrow}</p>
           <h1>{category.title}</h1>
           <p>{category.intro}</p>
         </div>

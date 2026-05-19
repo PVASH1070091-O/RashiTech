@@ -17,10 +17,6 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   margin: 0;
   font-family: 'Plus Jakarta Sans', sans-serif;
@@ -454,8 +450,7 @@ button {
 
 .intro-badge {
   position: absolute;
-  width: 210px;
-  padding: 20px;
+  width: 235px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(14px);
@@ -479,19 +474,19 @@ button {
 }
 
 .intro-badge-one {
-  top: 8%;
+  top: 4%;
   left: 10%;
 }
 
 .intro-badge-two {
   top: 33%;
-  right: 6%;
+  right: 2%;
   animation-delay: 0.8s;
 }
 
 .intro-badge-three {
-  bottom: 8%;
-  left: 18%;
+  bottom: -7%;
+  left: 13%;
   animation-delay: 1.6s;
 }
 
@@ -2105,6 +2100,7 @@ button {
   background: rgba(255, 255, 255, 0.06);
   box-shadow: var(--shadow);
   aspect-ratio: 1.14;
+  border-radius: 30px;
 }
 .service-hero-image img {
   height: 100%;

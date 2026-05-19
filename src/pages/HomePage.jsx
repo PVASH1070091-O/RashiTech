@@ -39,13 +39,12 @@ const audienceTracks = [
     note: 'Built for classrooms, learning spaces, and creator-led study environments.',
     galleryLabel: 'Educational environments',
     galleryImages: [
-      'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80',
-      'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80',
+      '/images/InteractiveFlatPanel.jpeg',
       // 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80',
       // 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1400&q=80',
       // 'https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1400&q=80',
     ],
-    mobileImage: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80',
+    mobileImage: '/images/InteractiveFlatPanel.jpeg',
   },
   {
     id: 'entertainment',
@@ -55,13 +54,12 @@ const audienceTracks = [
     note: 'Built for speakers, cinematic living rooms, and premium home-tech showcases.',
     galleryLabel: 'Entertainment environments',
     galleryImages: [
-      'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1400&q=80',
-      'https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=900&q=80',
-      // 'https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=900&q=80',
+      '/images/AcousticSol.jpeg',
+      '/images/Recliner.jpeg',
       // 'https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=1400&q=80',
       // 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80',
     ],
-    mobileImage:'https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=900&q=80',
+    mobileImage:'/images/AcousticSol.jpeg',
   },
   {
     id: 'displaySol',
@@ -71,13 +69,12 @@ const audienceTracks = [
     note: 'Built for speakers, cinematic living rooms, and premium home-tech showcases.',
     galleryLabel: 'Entertainment environments',
     galleryImages: [
-      'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1400&q=80',
-      'https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=900&q=80',
+      '/images/Projector1-removebg-preview.png',
       // 'https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=900&q=80',
       // 'https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=1400&q=80',
       // 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80',
     ],
-    mobileImage:'https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=900&q=80',
+    mobileImage:'/images/Projector1-removebg-preview.png',
   },
   {
     id: 'camera',
@@ -87,13 +84,9 @@ const audienceTracks = [
     note: 'Built for speakers, cinematic living rooms, and premium home-tech showcases.',
     galleryLabel: 'Entertainment environments',
     galleryImages: [
-      'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1400&q=80',
-      'https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=900&q=80',
-      // 'https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=900&q=80',
-      // 'https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=1400&q=80',
-      // 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80',
+      '/images/CameraConferecing.jpeg',
     ],
-    mobileImage:'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80',
+    mobileImage:'/images/CameraConferecing.jpeg',
   },
   {
     id: 'accessories',
@@ -103,31 +96,30 @@ const audienceTracks = [
     note: 'Built for speakers, cinematic living rooms, and premium home-tech showcases.',
     galleryLabel: 'Entertainment environments',
     galleryImages: [
-      'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1400&q=80',
-      'https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=900&q=80',
+      '/images/hometheater.jpg',
       // 'https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=900&q=80',
       // 'https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=1400&q=80',
       // 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80',
     ],
-    mobileImage:'https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=1400&q=80',
+    mobileImage:'/iamges/hometheater.jpg',
   },
 ];
 
 const eduProducts = [
    {
-    image: '/images/ptzcamera-removebg-preview.png',
+    image: '/images/PTZCamera-removebg-preview copy.png',
   },
   {
     image: '/images/tripodstandscreeen-removebg-preview.png',
   },
   {
-    image: '/images/projectorScreen-removebg-preview.png',
+    image: '/images/Projector1-removebg-preview.png',
   },
   {
-    image: '/images/signage_image-removebg-preview.png',
+    image: '/images/HTSystem-removebg-preview.png',
   },
   {
-    image: '/images/projector-removebg-preview.png',
+    image: '/images/InteractiveTouchPanel.png',
   },
 
 ]
@@ -448,16 +440,15 @@ export default function HomePage() {
 
           <div className="intro-orbit">
             <div className="intro-badge intro-badge-one">
-              <span>01</span>
-              <strong>Entertainment Spaces</strong>
+              
+              <img src="/images/teacher-teaching-children-classroom.webp" alt="digiclass"/>
             </div>
             <div className="intro-badge intro-badge-two">
-              <span>02</span>
-              <strong>Education Solutions</strong>
+                            <img src="/images/home-theater-in-cartoon-style-with-big-tv-room-with-sofa-modern-interior-acoustic-stereo-sound.jpg" />
+
             </div>
             <div className="intro-badge intro-badge-three">
-              <span>03</span>
-              <strong>Smart Installations</strong>
+              <img src="/images/hand-drawn-conference-room-table-in-flat-style-vector.jpg" />
             </div>
           </div>
         </div>
