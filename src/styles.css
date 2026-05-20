@@ -856,9 +856,16 @@ button {
 }
 .marquee-track-left {
   display: flex;
-  gap: 16px;
-  min-width: max-content;
-  animation: marquee 20s linear infinite;
+  width: max-content;
+  animation: marquee-left 18s linear infinite;
+}
+.marquee-track-left:hover {
+  animation-play-state: paused; /* optional: pause on hover */
+}
+
+@keyframes marquee-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* -50% because you duplicate the array */
 }
 .marquee-track-right {
   display: flex;
@@ -868,19 +875,55 @@ button {
 }
 
 .client-chip {
-  width: 240px;
-  min-height: 102px;
-  flex: 0 0 240px;
+
+  position: relative;
+
+  width: 280px;
+  height: 300px;
+
+  flex: 0 0 280px;
+
+  border-radius: 28px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.14),
+      rgba(255,255,255,0.05)
+    );
+
+  border: 1px solid rgba(255,255,255,0.16);
+
+  backdrop-filter: blur(18px);
+
+  
+
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
-  padding: 20px 22px;
-  border-radius: 0;
- 
- 
-  color: #111111;
-  
+
+  padding: 18px;
+  margin:10px;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.client-chip:hover {
+
+  transform:
+    translateY(-8px)
+    scale(1.02);
+
+  border-color: rgba(255,255,255,0.28);
+
+  box-shadow:
+    0 28px 70px rgba(0,0,0,0.28),
+    0 0 30px rgba(255,255,255,0.06);
 }
 
 .client-symbol {
@@ -2195,8 +2238,39 @@ button {
   .category-products { gap: 28px; padding-bottom: 42px; }
 }
 .client-logo-image{
-  height: 80%;
-  object-fit: contain;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  border-radius: 18px;
+
+  transition: transform 0.5s ease;
 }
 
+.client-chip:hover .client-logo-image{
+  transform: scale(1.06);
+}
+.client-chip::before{
+
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.04),
+      rgba(0,0,0,0.18)
+    );
+
+  z-index:1;
+}
+
+.client-chip img{
+  position:relative;
+  z-index:0;
+}
 
