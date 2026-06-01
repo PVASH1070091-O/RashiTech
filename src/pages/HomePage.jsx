@@ -126,53 +126,26 @@ const eduProducts = [
 
 const clients = [
   {
-    name: 'unitech',
-    mark: 'U',
-    className: 'client-logo-unitech',
-    subtitle: '',
+    name: 'Client1',
+    image: '/images/transparentBgClient1.png'
   },
   {
-    name: 'PHILIPS',
-    mark: 'P',
-    className: 'client-logo-philips',
-    subtitle: '',
+   name: 'Client2',
+    image: '/images/transparentBgClient2.png'
   },
   {
-    name: 'adani',
-    mark: 'a',
-    className: 'client-logo-adani',
-    subtitle: '',
+    name: 'Client3',
+    image: '/images/transparentBgClient3.png'
   },
   {
-    name: 'INDIA TODAY',
-    mark: 'IT',
-    className: 'client-logo-india-today',
-    subtitle: '',
+    name: 'Client4',
+    image: '/images/transparentBgClient4.png'
   },
   {
-    name: 'DLF',
-    mark: '△',
-    className: 'client-logo-dlf',
-    subtitle: 'BUILDING INDIA',
+    name: 'Client5',
+    image: '/images/transparentBgClient5.png'
   },
-  {
-    name: 'PCJ',
-    mark: '◎',
-    className: 'client-logo-pcj',
-    subtitle: 'PC Jeweller',
-  },
-  {
-    name: 'OMAXE',
-    mark: '▣',
-    className: 'client-logo-omaxe',
-    subtitle: 'Turning dreams into reality',
-  },
-  {
-    name: 'torrent',
-    mark: '✦',
-    className: 'client-logo-torrent',
-    subtitle: 'POWER',
-  },
+  
 ];
 
 const socialLinks = [
@@ -648,14 +621,12 @@ export default function HomePage() {
 
           <div className="marquee-track">
             {[...clients, ...clients].map((client, index) => (
-              <div className={`client-chip ${client.className}`} key={`${client.name}-${index}`}>
-                <span className="client-symbol" aria-hidden="true">
-                  {client.mark}
-                </span>
-                <div className="client-wordmark">
-                  <span className="client-name">{client.name}</span>
-                  {client.subtitle ? <span className="client-subtitle">{client.subtitle}</span> : null}
-                </div>
+              <div className={`client-chip`} key={`${client.name}-${index}`}>
+                <img
+                  src={client.image}
+                  alt={client.name}
+                  className="client-logo-image"
+                />
               </div>
             ))}
           </div>
@@ -714,13 +685,13 @@ export default function HomePage() {
           </div>
 
           {/* POLICIES */}
-          <div className="footer-column">
+          {/* <div className="footer-column">
             <h3>Policies</h3>
 
             <a href="/">Privacy Policy</a>
             <a href="/">Terms & Conditions</a>
             <a href="/">Shipping Policy</a>
-          </div>
+          </div> */}
 
           {/* SOCIAL */}
           <div className="footer-column">

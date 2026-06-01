@@ -116,13 +116,13 @@ useEffect(() => {
           </div>
       
           {/* POLICIES */}
-          <div className="footer-column">
+          {/* <div className="footer-column">
             <h3>Policies</h3>
       
             <a href="/">Privacy Policy</a>
             <a href="/">Terms & Conditions</a>
             <a href="/">Shipping Policy</a>
-          </div>
+          </div> */}
       
           {/* SOCIAL */}
           <div className="footer-column">

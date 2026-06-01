@@ -9,7 +9,7 @@ const Navbar = () => {
         <div className="topbar-inner">
           <Link className="brand" to="/">
             <img
-              src="/images/RashiTechLogo-removebg-preview.png"
+              src="/images/ShortLogo.png"
               alt="logo"
               className="brand-logo"
             />

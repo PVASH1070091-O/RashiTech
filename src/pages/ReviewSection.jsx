@@ -9,53 +9,53 @@ const testimonials = [
     image:
       'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop',
     review:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus elementum magna ut duis pulvinar tincidunt vivamus.',
+      'Very good experience,  nice setup, very smooth process, kushagra(owner) is very kind.',
   },
   {
     id: 2,
-    name: 'John Carter',
-    role: 'Founder',
+    name: 'Ritwika Sharma',
+    // role: 'Founder',
     image:
       'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop',
     review:
-      'Exceptional experience and premium quality solutions. The setup transformed our entertainment space completely.',
+      'Rashi technologies people are very experienced and professional...they guided and helped us a lot in making our home theatre.... thanks for your service.',
   },
   {
     id: 3,
-    name: 'Sophia Lee',
+    name: 'Vijendra Pradhan',
     role: 'Creative Director',
     image:
       'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=400&auto=format&fit=crop',
     review:
-      'Beautiful installations with immersive sound and visual quality.',
+      'Rashi technologies gave the perfect solution we require.Highly recommended for smart class room solutions, interactive panels/ smart boards and studio setup solutions',
   },
   {
     id: 4,
-    name: 'Michael Ray',
-    role: 'Architect',
+    name: 'Ayush Choudhary',
+    // role: 'Architect',
     image:
       'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=400&auto=format&fit=crop',
     review:
-      'Luxury execution and modern immersive spaces with premium detailing.',
+      'Rashi technologies did studio setup for me their services are very nice team is very friendly and responsible for their work highly recommend to give them a chance to work they will do it well',
   },
-  {
-    id: 5,
-    name: 'Michael Ray5',
-    role: 'Architect',
-    image:
-      'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=400&auto=format&fit=crop',
-    review:
-      'Luxury execution and modern immersive spaces with premium detailing.',
-  },
-  {
-    id: 6,
-    name: 'Michael Ray6',
-    role: 'Architect',
-    image:
-      'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=400&auto=format&fit=crop',
-    review:
-      'Luxury execution and modern immersive spaces with premium detailing.',
-  },
+  // {
+  //   id: 5,
+  //   name: 'Michael Ray5',
+  //   role: 'Architect',
+  //   image:
+  //     'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=400&auto=format&fit=crop',
+  //   review:
+  //     'Luxury execution and modern immersive spaces with premium detailing.',
+  // },
+  // {
+  //   id: 6,
+  //   name: 'Michael Ray6',
+  //   role: 'Architect',
+  //   image:
+  //     'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=400&auto=format&fit=crop',
+  //   review:
+  //     'Luxury execution and modern immersive spaces with premium detailing.',
+  // },
 ]
 
 export default function ReviewSection() {
@@ -122,18 +122,18 @@ export default function ReviewSection() {
           >
             <div className="quote">❝</div>
 
-            <img
+            {/* <img
               src={item.image}
               alt={item.name}
               className="testimonial-image"
-            />
+            /> */}
 
             <p className="testimonial-review">{item.review}</p>
 
             <div className="stars">★★★★★</div>
 
             <h3>{item.name}</h3>
-            <span>{item.role}</span>
+            {/* <span>{item.role}</span> */}
           </div>
         ))}
 
