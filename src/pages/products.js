@@ -261,6 +261,25 @@ export const serviceCategories = {
         description:
           'Professional AV design, installation, commissioning, and after-sales support — ensuring every system is deployed correctly, calibrated perfectly, and maintained reliably.',
       },
+     {
+  name: 'Projector Lift – Smart & Elegant Ceiling Integration',
+  image: '/images/projectorLift.jpeg',
+  description: `
+A Projector Lift is a motorized mechanism that conceals your projector inside the ceiling when not in use and smoothly lowers it at the touch of a button whenever needed.
+
+• Clean and clutter-free appearance
+
+• Enhances the aesthetics of home theatres, boardrooms, and auditoriums
+
+• Protects the projector from dust and accidental damage
+
+• Quiet and smooth motorized operation
+
+• Compatible with most projector models
+
+• Ideal for luxury home theatres and professional AV installations
+`
+}
     ],
   },
 };
