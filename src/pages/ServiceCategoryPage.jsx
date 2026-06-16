@@ -2,7 +2,7 @@ import { useEffect, useLayoutEffect } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { serviceCategories } from './products';
 import Navbar from './Navbar';
-import { FaWhatsapp,FaGoogle,FaInstagram,FaYoutube } from "react-icons/fa";
+import { FaWhatsapp,FaGoogle,FaInstagram,FaYoutube,FaEnvelope } from "react-icons/fa";
 
 
 
@@ -139,6 +139,13 @@ useEffect(() => {
     rel="noopener noreferrer"><FaInstagram /></a>
               <a href="https://youtube.com/@rashitechnologies?si=uGPg217T5an8Ef2F" target="_blank"
     rel="noopener noreferrer"><FaYoutube /></a>
+             <a
+  href="https://mail.google.com/mail/?view=cm&fs=1&to=Rashitech1012@gmail.com"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <FaEnvelope />
+</a>
             </div>
           </div>
         
