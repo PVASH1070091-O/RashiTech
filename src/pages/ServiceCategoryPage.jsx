@@ -2,7 +2,7 @@ import { useEffect, useLayoutEffect } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { serviceCategories } from './products';
 import Navbar from './Navbar';
-import { FaWhatsapp,FaFacebook,FaInstagram,FaYoutube } from "react-icons/fa";
+import { FaWhatsapp,FaGoogle,FaInstagram,FaYoutube } from "react-icons/fa";
 
 
 
@@ -133,7 +133,8 @@ useEffect(() => {
             </p>
       
             <div className="footer-socials">
-              <a href="/"><FaFacebook /></a>
+              <a href="https://share.google/j9RThQG1hBNcrOo3m" target="_blank"
+    rel="noopener noreferrer"><FaGoogle /></a>
               <a href="https://www.instagram.com/rashi_technologies?utm_source=qr" target="_blank"
     rel="noopener noreferrer"><FaInstagram /></a>
               <a href="https://youtube.com/@rashitechnologies?si=uGPg217T5an8Ef2F" target="_blank"

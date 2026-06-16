@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { products } from '../data/products';
 import Testimonials from './ReviewSection';
-import { FaWhatsapp, FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
+import { FaWhatsapp, FaGoogle, FaInstagram, FaYoutube } from "react-icons/fa";
 import Navbar from './Navbar';
 
 
@@ -702,7 +702,8 @@ export default function HomePage() {
             </p>
 
             <div className="footer-socials">
-              <a href="/"><FaFacebook /></a>
+              <a href="https://share.google/j9RThQG1hBNcrOo3m" target="_blank"
+    rel="noopener noreferrer"><FaGoogle /></a>
               <a href="https://www.instagram.com/rashi_technologies?utm_source=qr" target="_blank"
     rel="noopener noreferrer"><FaInstagram /></a>
               <a href="https://youtube.com/@rashitechnologies?si=uGPg217T5an8Ef2F" target="_blank"
