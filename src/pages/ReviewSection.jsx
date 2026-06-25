@@ -4,8 +4,8 @@ import './ReviewSection.css'
 const testimonials = [
   {
     id: 1,
-    name: 'Jane Doe',
-    role: 'CEO',
+    name: 'Piyush Vashistha',
+    // role: 'CEO',
     image:
       'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop',
     review:
